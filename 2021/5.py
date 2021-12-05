@@ -37,13 +37,11 @@ def mark_vents(grid, vents, diagonal):
         elif diagonal:
             tx = 1 if x2 > x1 else -1
             ty = 1 if y2 > y1 else -1
-            cx = x1
-            cy = y1
-            while cx != x2 and cy != y2:
-                grid[cy][cx] += 1
-                cx += tx
-                cy += ty
-            grid[cy][cx] += 1
+            while x1 != x2 and y1 != y2:
+                grid[y1][x1] += 1
+                x1 += tx
+                y1 += ty
+            grid[y1][x1] += 1
     return grid
 
 
